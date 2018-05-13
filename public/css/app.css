@@ -4,6 +4,13 @@
   margin-top: 50px;
 }
 
+.search-container .search-bar {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
