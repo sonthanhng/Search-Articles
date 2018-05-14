@@ -16,6 +16,7 @@
     <div class="container search-container">
       <h4>Search Results</h4>
       <input type="text" class="search-bar" id="search-bar"/>
+      <p id="total-result"></p>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -23,9 +24,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John</td>
-          </tr>
         </tbody>
       </table>
     </div>

@@ -10,8 +10,7 @@ class DatabaseSeeder extends Seeder
     {
       Model::unguard();
       $faker = Faker\Factory::create();
-      // create 30 articles
-      foreach(range(1, 50000) as $index) {
+      foreach(range(1, 5000) as $index) {
           Article::create([
               'title' => $faker->sentence(5),
               'content' => $faker->paragraph(6)

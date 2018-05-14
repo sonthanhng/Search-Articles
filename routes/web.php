@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('articles', 'ArticlesController@index');
+Route::get('/articles/find/{value}', 'ArticlesController@find');

@@ -18,4 +18,9 @@ class ArticlesController extends Controller
     // return response()->json($articles);
     return view('article');
   }
+
+  public function find($value) {
+    $articles = Article::where('title', 'LIKE', '%'.$value.'%')->get();
+    return $articles;
+  }
 }
