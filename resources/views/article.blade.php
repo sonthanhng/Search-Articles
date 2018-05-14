@@ -23,7 +23,7 @@
             <th>Article</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="search-result">
         </tbody>
       </table>
     </div>

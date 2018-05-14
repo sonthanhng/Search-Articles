@@ -1,9 +1,11 @@
 function ShowResult(data) {
+  var html = [];
   $('#total-result').html(data.length);
   $('tbody').html('');
   for(var i = 0; i < data.length; i++) {
-    $('tbody').append('<tr><td>'+ data[i] + '</td></tr>');
+    html.push('<tr><td>'+ data[i] + '</td></tr>');
   }
+  document.getElementById('search-result').innerHTML = html.join('');
 }
 
 $( document ).ready(function() {
