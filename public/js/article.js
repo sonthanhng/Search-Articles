@@ -1,3 +1,11 @@
+function ShowResult(data) {
+  $('#total-result').html(data.length);
+  $('tbody').html('');
+  for(var i = 0; i < data.length; i++) {
+    $('tbody').append('<tr><td>'+ data[i] + '</td></tr>');
+  }
+}
+
 $( document ).ready(function() {
   $.ajaxSetup({
     headers: {
@@ -13,12 +21,9 @@ $( document ).ready(function() {
       contentType: false,
       cache: false,
       success: function(data) {
-        // console.log(data);
-        $('#total-result').html(data.length);
-        $('tbody').html('');
-        for(var i = 0; i < data.length; i++) {
-          $('tbody').append('<tr><td>'+ data[i].title + '</td></tr>');
-        }
+        console.time('ShowResult');
+        ShowResult(data);
+        console.timeEnd('ShowResult');
       },
       error: function(data) {
         // console.log(data);

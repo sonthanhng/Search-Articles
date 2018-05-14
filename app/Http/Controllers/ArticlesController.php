@@ -17,7 +17,7 @@ class ArticlesController extends Controller
     $key = 'articles_'.$value;
     // $articles = Cache::get($key);
     $articles = Cache::remember($key, 22*60, function() use ($value) {
-        return Article::where('title', 'LIKE', '%'.$value.'%')->get();
+        return Article::where('title', 'LIKE', '%'.$value.'%')->pluck('title');
     });
     return response()->json($articles);
   }
