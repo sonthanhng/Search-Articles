@@ -9,18 +9,16 @@ use Cache;
 class ArticlesController extends Controller
 {
   public function index() {
-    // $articles = Article::all();
-
-    // // using cache
-    // $articles = Cache::remember('articles', 22*60, function() {
-    //     return Article::all();
-    // });
-    // return response()->json($articles);
     return view('article');
   }
 
   public function find($value) {
-    $articles = Article::where('title', 'LIKE', '%'.$value.'%')->get();
-    return $articles;
+    // using cache
+    $key = 'articles_'.$value;
+    // $articles = Cache::get($key);
+    $articles = Cache::remember($key, 22*60, function() use ($value) {
+        return Article::where('title', 'LIKE', '%'.$value.'%')->get();
+    });
+    return response()->json($articles);
   }
 }
